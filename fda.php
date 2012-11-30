@@ -42,7 +42,7 @@ foreach ($urldata as $key => $value) {
 		$m12 = '[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}';
 		$m13 = '[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}';
 		$m14 = '[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}';
-		while ($g <= 14)
+		
 		$g=0;
 		while ($g <= 13) {
 			$digittwo = 14 - $g;
@@ -98,19 +98,7 @@ foreach ($urldata as $key => $value) {
 			echo $concat . '<br>';
 		}
 		//start of the two character breaks
-		$g=0;
-		$o=0;
-		while ($g <= 7) {
-			$digittwo = 3 - $g;
-			$digitone = 3 + $g;
-			$o++;
-			$g++;
-			$concattwo = 'm' . $digittwo;
-			$concattwor = 'm' . $g;
-			$concat = "'~" . $$concattwo . "." .$$concattwor . "." .$$concatthree "~'";
-			$concattwo = "'~" . $$concattwo . "." .$$concattwor . "." .$$concatthree "~'";
-			echo $concat . '<br>' . $concattwo . '<br>';
-		}
+
 		//$matchtimes = $matchtimes * 2;
 		echo '<br>';
 		/*
