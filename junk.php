@@ -1,4 +1,16 @@
 <?php
+set_time_limit(0);
+$link = mysql_connect('localhost', 'angry_monster', 'goblins33');
+if (!$link) {
+    die('Not connected : ' . mysql_error());
+}
+
+// make recallspi the current db
+$db_selected = mysql_select_db('recallspi', $link);
+if (!$db_selected) {
+    die ('fuuuuuu : ' . mysql_error());
+}
+
 		$m0 = 'null';
 		$m1 = '[0-9]{1}';
 		$m2 = '[0-9]{1}[0-9]{1}';
@@ -14,6 +26,9 @@
 		$m12 = '[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}';
 		$m13 = '[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}';
 		$m14 = '[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}[0-9]{1}';
+
+		//array
+		$harry = array();
 		//two digit
 		$g=0;
 		while ($g <= 13) {
@@ -22,7 +37,10 @@
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
 			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
-			echo $concat . '<br>';
+			//echo $concat . '<br>';
+			$harry[] = $concat;
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$concat')");
 		}
 		$g=0;
 		while ($g <= 12) {
@@ -31,7 +49,10 @@
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
 			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
-			echo $concat . '<br>';
+			//echo $concat . '<br>';
+			$harry[] = $concat;
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$concat')");
 		}
 		$g=0;
 		while ($g <= 11) {
@@ -40,7 +61,10 @@
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
 			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
-			echo $concat . '<br>';
+			//echo $concat . '<br>';
+			$harry[] = $concat;
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$concat')");
 		}
 		$g=0;
 		while ($g <= 10) {
@@ -49,7 +73,10 @@
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
 			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
-			echo $concat . '<br>';
+			//echo $concat . '<br>';
+			$harry[] = $concat;
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$concat')");
 		}
 		$g=0;
 		while ($g <= 9) {
@@ -58,7 +85,10 @@
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
 			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
-			echo $concat . '<br>';
+			$harry[] = $concat;
+			//echo $concat . '<br>';
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$concat')");
 		}
 		$g=0;
 		while ($g <= 8) {
@@ -67,7 +97,10 @@
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
 			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
-			echo $concat . '<br>';
+			$harry[] = $concat;
+			//echo $concat . '<br>';
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$concat')");
 		}
 
 		//three digit conbinations
@@ -84,7 +117,10 @@
 			$scooter = 'm' . $k;
 			$rawr = "'~" . $$scooter . "." . $concat . "~'";
 			$k++;
-			echo $rawr . '<br>';
+			$harry[] = $rawr;
+			//echo $rawr . '<br>';
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$rawr')");
 		}
 		}
 		$g=0;
@@ -100,7 +136,10 @@
 			$scooter = 'm' . $k;
 			$rawr = "'~" . $$scooter . "." . $concat . "~'";
 			$k++;
-			echo $rawr . '<br>';
+			$harry[] = $rawr;
+			//echo $rawr . '<br>';
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$rawr')");
 		}
 		}
 				$g=0;
@@ -116,7 +155,10 @@
 			$scooter = 'm' . $k;
 			$rawr = "'~" . $$scooter . "." . $concat . "~'";
 			$k++;
-			echo $rawr . '<br>';
+			$harry[] = $rawr;
+			//echo $rawr . '<br>';
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$rawr')");
 		}
 		}
 				$g=0;
@@ -132,7 +174,10 @@
 			$scooter = 'm' . $k;
 			$rawr = "'~" . $$scooter . "." . $concat . "~'";
 			$k++;
-			echo $rawr . '<br>';
+			$harry[] = $rawr;
+			//echo $rawr . '<br>';
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$rawr')");
 		}
 		}
 				$g=0;
@@ -148,7 +193,10 @@
 			$scooter = 'm' . $k;
 			$rawr = "'~" . $$scooter . "." . $concat . "~'";
 			$k++;
-			echo $rawr . '<br>';
+			$harry[] = $rawr;
+			//echo $rawr . '<br>';
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$rawr')");
 		}
 		}
 				$g=0;
@@ -164,7 +212,10 @@
 			$scooter = 'm' . $k;
 			$rawr = "'~" . $$scooter . "." . $concat . "~'";
 			$k++;
-			echo $rawr . '<br>';
+			$harry[] = $rawr;
+			//echo $rawr . '<br>';
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$rawr')");
 		}
 		}
 				$g=0;
@@ -180,11 +231,14 @@
 			$scooter = 'm' . $k;
 			$rawr = "'~" . $$scooter . "." . $concat . "~'";
 			$k++;
-			echo $rawr . '<br>';
+			$harry[] = $rawr;
+			//echo $rawr . '<br>';
+			//mysql_query("INSERT INTO pattern (pat)
+			//VALUES ('$rawr')");
 		}
 		}
 
 
-
+print_r($harry);
 
 ?>
