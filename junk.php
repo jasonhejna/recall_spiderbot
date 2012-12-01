@@ -239,6 +239,9 @@ if (!$db_selected) {
 		}
 
 
-print_r($harry);
-
+//print_r($harry);
+foreach ($harry as $key => $value) {
+	echo $value.'<br>';
+	mysql_query('INSERT INTO pattern (pat) VALUES ('.$value.')');
+}
 ?>

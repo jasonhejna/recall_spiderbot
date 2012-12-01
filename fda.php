@@ -1,4 +1,5 @@
 <?php
+$f=0;
 set_time_limit(0);
 require 'connectz.php';
 //http://www.fda.gov/AboutFDA/ContactFDA/StayInformed/RSSFeeds/Recalls/rss.xml
@@ -13,6 +14,7 @@ preg_match_all('~<link>(.*?)</link>~',$file,$urldata);
 		//echo $value . '<br>';
 	}
 }*/
+$v=3;
 foreach ($urldata as $key => $bvalue) {
 	//print_r($bvalue);
 	foreach ($bvalue as $key => $avalue) {
@@ -29,17 +31,21 @@ foreach ($urldata as $key => $bvalue) {
 // also, do all the preg matches at the same time, then itterate through one function of the foreach loop
 
 
-$result_bro = mysql_query("SELECT `pat` FROM pattern WHERE `did` < 1009");
-while($row = mysql_fetch_array($result_bro)) {
+while ($v <=1070){
+$v++;
+$result_bro = mysql_query('SELECT `pat` FROM pattern WHERE `did` = "$v"');
+while($row = mysql_fetch_row($result_bro)) {
 //$y++;
 		$matcher = $row['pat'];
-		$moonriver = "'~" . $matcher  . "~'";
-		echo $moonriver . '<br>';
-		preg_match_all($moonriver,$onefile,$onedata);
+		$matcher = "'" . $matcher . "'";
+		echo $matcher . '<br';
+		//$moonriver = "'~" . $matcher  . "~'";
+		//echo $moonriver . '<br>';
+		preg_match_all($matcher,$onefile,$onedata);
 		//print_r($onedata);
 		foreach ($onedata as $key => $value) {
 			foreach ($value as $key => $value) {
-				echo $value . '<br>';
+				//echo $value . '<br>';
 				$i=0;
 				preg_match('~[2-9]{1}~', $value, $result);
 				foreach ($result as $keyer => $valueer) {
@@ -50,14 +56,20 @@ while($row = mysql_fetch_array($result_bro)) {
 					$pattern = '/[^0-9]*/';
 					$goodlookin = preg_replace($pattern,'', $value);
 					$y=0;
-					$checkin = mysql_query("SELECT `code` FROM codes WHERE `code` = $goodlookin");
-  					while($row = mysql_fetch_array($chekin)) {
-  						$y++;
+					//$x=0;
+					$checkin = mysql_query('SELECT `code` FROM codes WHERE `code` = "$goodlookin"');
+  					while($row = mysql_fetch_row($checkin)) {
+  						$yellow = $row['code'];
+  						//$x++;
+  						if ($yellow != $goodlookin) {
+  							mysql_query("INSERT INTO codes (`code`) VALUES ('$goodlookin')");
+  							$f++;
+  						}
 					}
-					if ($y <= 0) {
+/*					if ($y == 0) {
 						mysql_query("INSERT INTO codes (`code`) VALUES ('$goodlookin')");
 						//echo $value . '<br>';
-					}
+					}*/
 				}
 		} //end foreach
 		}
@@ -65,5 +77,5 @@ while($row = mysql_fetch_array($result_bro)) {
 
 	}
 }
-
+}
 ?>
