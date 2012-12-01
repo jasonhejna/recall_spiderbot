@@ -2,7 +2,7 @@
 //fda new link storeage.
 //run often
 $timenow = time();
-set_time_limit(0);
+set_time_limit(28);
 require 'connectz.php';
 //http://www.fda.gov/AboutFDA/ContactFDA/StayInformed/RSSFeeds/Recalls/rss.xml
 //$alala = 'http://www.fda.gov/Safety/Recalls/default.htm';
@@ -49,12 +49,7 @@ foreach ($urldata as $key => $bvalue) {
 		$starter = mysql_query("SELECT `id` FROM fdaurl WHERE `date` = '$timenow' ORDER BY id ASC LIMIT 1");
   		$row = mysql_fetch_row($starter);
   		echo $row[0].'<br>';
-  		//update where row id is equal
-		
 
-
-	//update titles to the startid incremented row, this works only if in the same order as the fda xml
-	//crazy encapsulating while loop to itterate $startid++
 preg_match_all('~<title>(.*?)</title>~',$file,$loldata);
 $q=9999999;
 $q = $row[0];
