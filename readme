@@ -1,1 +1,20 @@
-readme
+Readme
+//////////////////////////////
+This project contains code to which is intended to search sources,
+such as the fda, for recalled product UPC, EAN, etc, etc, numbers,
+and information.
+//////////////////////////////
+
+FDA
+http://www.fda.gov/AboutFDA/ContactFDA/StayInformed/RSSFeeds/Recalls/rss.xml
+status: nearing completion
+tables: pattern, codes, fda
+used scripts (cron interval): fda.php (60sec), fda_store.php (30sec)
+
+/////////////////////////////
+
+CPSC
+http://www.cpsc.gov/cpscpub/prerel/prerel.xml
+status: pending
+tables:
+used scripts (cron interval):
