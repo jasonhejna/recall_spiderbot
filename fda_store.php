@@ -37,7 +37,7 @@ foreach ($urldata as $key => $bvalue) {
 		if ($coolbro != "rss.xml" && $f > 0 && $j == 0) {
 			echo $avalue.'<br>';
 
-			mysql_query("INSERT INTO fdaurl (`url`,`date`) VALUES ('$avalue','$timenow')");
+			mysql_query("INSERT INTO fdaurl (`url`,`date`,`flag`) VALUES ('$avalue','$timenow','0')");
 		}
 		$f++;
 		//echo $coolbro .'<br>';

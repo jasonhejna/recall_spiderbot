@@ -36,7 +36,7 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
+			$concat = "'~" . $$concattwo . "[^0-9]{1}" . $$concattwor . "~'";
 			//echo $concat . '<br>';
 			$harry[] = $concat;
 			//mysql_query("INSERT INTO pattern (pat)
@@ -48,7 +48,7 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
+			$concat = "'~" . $$concattwo . "[^0-9]{1}" . $$concattwor . "~'";
 			//echo $concat . '<br>';
 			$harry[] = $concat;
 			//mysql_query("INSERT INTO pattern (pat)
@@ -60,7 +60,7 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
+			$concat = "'~" . $$concattwo . "[^0-9]{1}" . $$concattwor . "~'";
 			//echo $concat . '<br>';
 			$harry[] = $concat;
 			//mysql_query("INSERT INTO pattern (pat)
@@ -72,7 +72,7 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
+			$concat = "'~" . $$concattwo . "[^0-9]{1}" . $$concattwor . "~'";
 			//echo $concat . '<br>';
 			$harry[] = $concat;
 			//mysql_query("INSERT INTO pattern (pat)
@@ -84,7 +84,7 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
+			$concat = "'~" . $$concattwo . "[^0-9]{1}" . $$concattwor . "~'";
 			$harry[] = $concat;
 			//echo $concat . '<br>';
 			//mysql_query("INSERT INTO pattern (pat)
@@ -96,7 +96,7 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = "'~" . $$concattwo . "." . $$concattwor . "~'";
+			$concat = "'~" . $$concattwo . "[^0-9]{1}" . $$concattwor . "~'";
 			$harry[] = $concat;
 			//echo $concat . '<br>';
 			//mysql_query("INSERT INTO pattern (pat)
@@ -110,12 +110,12 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = $$concattwo . "." . $$concattwor;
+			$concat = $$concattwo . "[^0-9]{1}" . $$concattwor;
 			//echo $concat . '<br>';
 		$k=0;
 		while ($k <= 12) {
 			$scooter = 'm' . $k;
-			$rawr = "'~" . $$scooter . "." . $concat . "~'";
+			$rawr = "'~" . $$scooter . "[^0-9]{1}" . $concat . "~'";
 			$k++;
 			$harry[] = $rawr;
 			//echo $rawr . '<br>';
@@ -129,12 +129,12 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = $$concattwo . "." . $$concattwor;
+			$concat = $$concattwo . "[^0-9]{1}" . $$concattwor;
 			//echo $concat . '<br>';
 		$k=0;
 		while ($k <= 12) {
 			$scooter = 'm' . $k;
-			$rawr = "'~" . $$scooter . "." . $concat . "~'";
+			$rawr = "'~" . $$scooter . "[^0-9]{1}" . $concat . "~'";
 			$k++;
 			$harry[] = $rawr;
 			//echo $rawr . '<br>';
@@ -148,12 +148,12 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = $$concattwo . "." . $$concattwor;
+			$concat = $$concattwo . "[^0-9]{1}" . $$concattwor;
 			//echo $concat . '<br>';
 		$k=0;
 		while ($k <= 12) {
 			$scooter = 'm' . $k;
-			$rawr = "'~" . $$scooter . "." . $concat . "~'";
+			$rawr = "'~" . $$scooter . "[^0-9]{1}" . $concat . "~'";
 			$k++;
 			$harry[] = $rawr;
 			//echo $rawr . '<br>';
@@ -167,12 +167,12 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = $$concattwo . "." . $$concattwor;
+			$concat = $$concattwo . "[^0-9]{1}" . $$concattwor;
 			//echo $concat . '<br>';
 		$k=0;
 		while ($k <= 12) {
 			$scooter = 'm' . $k;
-			$rawr = "'~" . $$scooter . "." . $concat . "~'";
+			$rawr = "'~" . $$scooter . "[^0-9]{1}" . $concat . "~'";
 			$k++;
 			$harry[] = $rawr;
 			//echo $rawr . '<br>';
@@ -186,12 +186,12 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = $$concattwo . "." . $$concattwor;
+			$concat = $$concattwo . "[^0-9]{1}" . $$concattwor;
 			//echo $concat . '<br>';
 		$k=0;
 		while ($k <= 12) {
 			$scooter = 'm' . $k;
-			$rawr = "'~" . $$scooter . "." . $concat . "~'";
+			$rawr = "'~" . $$scooter . "[^0-9]{1}" . $concat . "~'";
 			$k++;
 			$harry[] = $rawr;
 			//echo $rawr . '<br>';
@@ -205,12 +205,12 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = $$concattwo . "." . $$concattwor;
+			$concat = $$concattwo . "[^0-9]{1}" . $$concattwor;
 			//echo $concat . '<br>';
 		$k=0;
 		while ($k <= 12) {
 			$scooter = 'm' . $k;
-			$rawr = "'~" . $$scooter . "." . $concat . "~'";
+			$rawr = "'~" . $$scooter . "[^0-9]{1}" . $concat . "~'";
 			$k++;
 			$harry[] = $rawr;
 			//echo $rawr . '<br>';
@@ -224,12 +224,12 @@ if (!$db_selected) {
 			$g++;
 			$concattwo = 'm' . $digittwo;
 			$concattwor = 'm' . $g;
-			$concat = $$concattwo . "." . $$concattwor;
+			$concat = $$concattwo . "[^0-9]{1}" . $$concattwor;
 			//echo $concat . '<br>';
 		$k=0;
 		while ($k <= 12) {
 			$scooter = 'm' . $k;
-			$rawr = "'~" . $$scooter . "." . $concat . "~'";
+			$rawr = "'~" . $$scooter . "[^0-9]{1}" . $concat . "~'";
 			$k++;
 			$harry[] = $rawr;
 			//echo $rawr . '<br>';
