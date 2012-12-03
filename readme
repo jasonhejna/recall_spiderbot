@@ -1,8 +1,7 @@
 Readme
 //////////////////////////////
-This project contains code to which is intended to search sources,
-such as the fda, for recalled product UPC, EAN, etc, etc, numbers,
-and information.
+This project is intended to search sources, such as the fda, for recalled 
+product UPC, EAN, etc, etc, numbers, and information.
 //////////////////////////////
 
 FDA
