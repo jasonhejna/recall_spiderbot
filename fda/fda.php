@@ -1,6 +1,7 @@
 <?php
 $f=0;
 //$v=3;
+$timenow = time();
 $harry = array();
 set_time_limit(0);
 $mysqli = new mysqli("localhost", "angry_monster", "goblins33","recallspi");
@@ -95,6 +96,7 @@ foreach ($larray as $key => $xvalue) {
 					$pattern = '/[^0-9]{1}/';
 					$goodlookin = preg_replace($pattern,'', $value);
 					$goodlookin = preg_replace($pattern,'', $goodlookin);
+					$goodlookin = preg_replace($pattern,'', $goodlookin);
 					$y=0;
 					//$x=0;
 					$m=0;
@@ -119,8 +121,9 @@ foreach ($larray as $key => $xvalue) {
 					$smoke = $trees->fetch_row();
 					$yellow = $smoke[0];*/
 					echo 'wcheck ' . $wcheck . '<br>' . 'goodlookin ' . $goodlookin . '<br>';
+					$fda = "fda";
 		  			if ($wcheck == "fuckqqqqqq") {
-		  					if ($mysqli->query("INSERT INTO codes (`code`) VALUES ('".$goodlookin."')") === TRUE) {
+		  					if ($mysqli->query("INSERT INTO codes (`code`,`fid`,`source`,`date`) VALUES ('".$goodlookin."','".$updateid."','".$fda."','".$timenow."')") === TRUE) {
 									   //echo 'wtf sqql'; 
 							}
 		  							echo 'wtf sqql<br>';

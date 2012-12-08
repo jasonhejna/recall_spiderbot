@@ -6,14 +6,17 @@ product UPC, EAN, etc, etc, numbers, and information.
 
 FDA
 http://www.fda.gov/AboutFDA/ContactFDA/StayInformed/RSSFeeds/Recalls/rss.xml
-status: nearing completion
+status: complete, re-upload 12/8/12
 tables: pattern, codes, fda
-used scripts (cron interval): fda.php (60sec), fda_store.php (30sec)
+used scripts (min cron interval): fda.php (60sec), fda_store.php (30sec)
 
 /////////////////////////////
 
 CPSC
 http://www.cpsc.gov/cpscpub/prerel/prerel.xml
-status: pending
-tables:
-used scripts (cron interval):
+status: complete, pending server upload & test 12/8/2012
+tables: pattern, codes, cpscurl
+used scripts (min cron interval): cpsc_regex.php (60sec), cpsc_store.php (30sec)
+
+/////////////////////////////
+

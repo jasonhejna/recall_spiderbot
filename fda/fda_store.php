@@ -50,6 +50,31 @@ foreach ($urldata as $key => $bvalue) {
   		$row = mysql_fetch_row($starter);
   		echo $row[0].'<br>';
 
+preg_match_all('~<description>(.*?)</description>~',$file,$loldata);
+$q=9999999;
+$q = $row[0];
+//$q=$id;
+echo $q.'<br>';
+foreach ($loldata as $key => $cvalue) {
+
+foreach ($cvalue as $key => $zvalue) {
+	
+			$test = substr($zvalue, 1, 11);
+			//echo $test.'<br>';
+		if ($test == "description") {
+			$zvalue = substr($zvalue, 13, -14);
+		}
+		echo $zvalue.'<br>';
+		$coolbro = substr($zvalue, 0, 18);
+		echo $coolbro.'<br>';
+		if ($coolbro != "Recall Information") {
+			//echo $avalue.'<br>';
+			
+			mysql_query("UPDATE fdaurl SET descr ='$zvalue' WHERE id='$q'");
+			$q++;
+		}
+
+	}}//end foreach
 preg_match_all('~<title>(.*?)</title>~',$file,$loldata);
 $q=9999999;
 $q = $row[0];
@@ -75,6 +100,5 @@ foreach ($bvalue as $key => $avalue) {
 		}
 
 	}}//end foreach
-
 
 ?>

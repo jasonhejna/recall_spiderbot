@@ -1,6 +1,7 @@
 <?php
 $f=0;
 //$v=3;
+$timenow = time();
 $harry = array();
 set_time_limit(0);
 $mysqli = new mysqli("localhost", "angry_monster", "goblins33","recallspi");
@@ -17,21 +18,21 @@ if (mysqli_connect_errno()) {
 //get the name and date here once, since we are in the foreach loop and $onefile in our content
 
 // also, do all the preg matches at the same time, then itterate through one function of the foreach loop
-$get = "SELECT `id`,`url` FROM fdaurl WHERE `flag` = 0 ORDER by id ASC LIMIT 1";
+$get = "SELECT `id`,`url` FROM cpscurl WHERE `flag` = 0 ORDER by id ASC LIMIT 1";
 $tree = $mysqli->query($get);
 $high = $tree->fetch_row();
 //print_r($high);
-//$get = mysql_query('SELECT `url` FROM fdaurl WHERE `flag` = 0');
+//$get = mysql_query('SELECT `url` FROM cpscurl WHERE `flag` = 0');
 //while($row = mysql_fetch_array($get)) {
 $updateid = $high[0];
 $thisurl = $high[1];
 echo $thisurl.'<br>';
 echo $updateid.'<br>';
 $one=1;
-if ($mysqli->query("UPDATE fdaurl SET `flag` = '$one' WHERE `id` = '$updateid'") === TRUE) {
+if ($mysqli->query("UPDATE cpscurl SET `flag` = '$one' WHERE `id` = '$updateid'") === TRUE) {
     //printf("Table myCity successfully created.\n");
 }
-//mysql_query("UPDATE fdaurl SET `flag` = '$one' WHERE `id` = '$updateid'");
+//mysql_query("UPDATE cpscurl SET `flag` = '$one' WHERE `id` = '$updateid'");
 //echo $high[1].'<br>';
 $onefile = file_get_contents($thisurl);
 $larray = array();
@@ -95,6 +96,7 @@ foreach ($larray as $key => $xvalue) {
 					$pattern = '/[^0-9]{1}/';
 					$goodlookin = preg_replace($pattern,'', $value);
 					$goodlookin = preg_replace($pattern,'', $goodlookin);
+					$goodlookin = preg_replace($pattern,'', $goodlookin);
 					$y=0;
 					//$x=0;
 					$m=0;
@@ -119,8 +121,9 @@ foreach ($larray as $key => $xvalue) {
 					$smoke = $trees->fetch_row();
 					$yellow = $smoke[0];*/
 					echo 'wcheck ' . $wcheck . '<br>' . 'goodlookin ' . $goodlookin . '<br>';
+					$fda = "fda";
 		  			if ($wcheck == "fuckqqqqqq") {
-		  					if ($mysqli->query("INSERT INTO codes (`code`) VALUES ('".$goodlookin."')") === TRUE) {
+		  					if ($mysqli->query("INSERT INTO codes (`code`,`fid`,`source`,`date`) VALUES ('".$goodlookin."','".$updateid."','".$fda."','".$timenow."')") === TRUE) {
 									   //echo 'wtf sqql'; 
 							}
 		  							echo 'wtf sqql<br>';
