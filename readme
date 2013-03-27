@@ -6,9 +6,15 @@ product UPC, EAN, etc, etc, numbers, and information.
 
 FDA
 http://www.fda.gov/AboutFDA/ContactFDA/StayInformed/RSSFeeds/Recalls/rss.xml
-status: complete, re-upload 12/8/12
+status: complete, pending server upload & test 12/8/2012
 tables: pattern, codes, fda
 used scripts (min cron interval): fda.php (60sec), fda_store.php (30sec)
+
+/////////////////////////////
+
+FDA - old recalls
+url - varying
+status: begining 12/8/12
 
 /////////////////////////////
 
@@ -20,3 +26,8 @@ used scripts (min cron interval): cpsc_regex.php (60sec), cpsc_store.php (30sec)
 
 /////////////////////////////
 
+recalledproducts.org
+http://recalledproducts.org/feed
+status: not started
+tables:
+used scripts (min cron interval):
